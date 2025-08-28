@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;  
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-image: url();
+  font-family: "Roboto Condensed", sans-serif;
+
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+/* links container*/
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+/* list */
+.links ul{
+  gap:20px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin-right: 20px;
+}
+/* a element design */
+.links a{
+color: rgb(148, 146, 146);
+text-decoration: none;
+font-weight: bold;
+}
+
+.first-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+.main-tag{
+  padding: 20px;
+}
+
+.heading1{
+  font-size: 35px;
+  width: 200px;
+}
+
+.apply {
+  margin-top: 10px;
+  width: 100px;
+  border-radius: 20px;
+  height: 30px;
+  
+  background-color: rgb(55, 153, 209);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
