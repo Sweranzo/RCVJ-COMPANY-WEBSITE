@@ -8,9 +8,11 @@
 body {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+
   background-image: url();
+ 
   font-family: "Roboto Condensed", sans-serif;
+  background-color: rgba(253, 254, 255, 0.781);
 
 }
 
@@ -18,7 +20,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
- 
+  position: sticky;
 }
 /* links container*/
 .nav {
@@ -37,13 +39,15 @@ body {
 }
 /* a element design */
 .links a{
-color: rgb(148, 146, 146);
+color: rgba(7, 2, 70, 0.377);
 text-decoration: none;
 font-weight: bold;
+font-size: small;
 }
 
 .first-section{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
  }
@@ -67,4 +71,78 @@ font-weight: bold;
   border: none;
   color: white;
   font-weight: bold;
+}
+
+.second-section{
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  border: 2px solid rgba(41, 21, 113, 1);;
+ 
+
+}
+
+.background-video {
+  height: 100%;
+  width: 100%;
+  filter: blur(6px);
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+   
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 1;
+ 
+  
+}
+
+.video-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+  color: black;
+  text-align: center;
+  font-size: small;
+  height: 80px;
+  gap: 20px;
+}
+
+.video-buttons button {
+  background-color: rgba(230, 120, 21, 1);
+  color: white;
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  border: none;
+  font-weight: bolder;
+}
+
+.social-media{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  
+}
+
+.social-media img{
+  width: 40px;
+  
 }

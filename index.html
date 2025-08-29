@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" >
+  <script src="index.js" defer></script>
 </head>
 <body>
+
   <div id="header">
     <div class="logo">
-      <img class="rcvj" src="logo.png" alt="logo" width="120" height="100"/>
+      <img class="rcvj" src="./images/logo.png" alt="logo" width="120" height="100"/>
     </div>
     <div class="nav">
       <div class="links">
@@ -21,7 +23,9 @@
        </div> 
     </div>
   </div>
+
   <div class="main">
+
       <section>
         <div class="first-section">
           <div class="main-tag">
@@ -34,17 +38,41 @@
             <button class="apply">Apply Now </button>
           </div>
             <div class="working-man">
-              <img class="man-gif" src="Man work from home with laptops.gif" alt="man wprking">
+              <video class="man-gif" autoplay muted loop><source src="./videos/man.mp4"></video>
             </div>
         </div>
       </section>
+
     <section>
       <div class="second-section">
-        <div class="first-para">
-         <h3>Why RCVJ?</h3>
-        </div>
+        <video autoplay muted loop class="background-video">
+          <source src="./videos/man.mp4"/>
+        </video>
+        <div class="overlay"></div>
+          <div class="video-content">
+            <h1 id="changing-text">Start your career now with us</h1>
+            <div class="video-buttons">
+              <button>Positions</button>
+              <button>Our Partners</button>
+            </div>
+          </div>
       </div>
     </section>
+    
+    <section>
+    <h1></h1>
+     <div class="third-section">
+      <div class="social-media">
+        <a href="https://www.facebook.com/RCVJInc1992" target="_blank"><img src="./images/fb.png" alt="fb-icon"></a>
+        <a href="https://www.linkedin.com/in/rcvj-inc-6b5599184/?originalSubdomain=ph" target="_blank"><img src="./images/linkedin.png" alt="linkedin-icon"></a>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXGkBrzJSBxbDNFPspKNqqGMXKpPhsQgJtbNGXnCzpnhTGpkPPBpgvpSFMdpTprjdwlKn" target="_blank"><img src="./images/gmail.png" alt="gmail-icon"></a>
+      </div>
+   
+    </div> 
+    </section>
+
   </div>
+  
+  
 </body>
 </html>
