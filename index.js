@@ -1,6 +1,6 @@
 //text-animation//
 const setTextTransition = document.getElementById('changing-text');
-const messages = ['Start your career now with us', 'Fast reliable process', 'Good environment to choose from'];
+const messages = ['Start your career now with us', 'Fast reliable process', 'Good environments'];
 
 let index=0;
 
