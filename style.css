@@ -20,7 +20,7 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   position: sticky;
-  background-color: rgba(243, 243, 243, 0.411);
+  background-color: rgba(255, 255, 255, 0.616);
   box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 /* links container*/
@@ -151,5 +151,33 @@ font-size: 12px;
 
 .social-media img{
   width: 40px;
+  
+}
+
+.third-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+  gap: 20px;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.perst-container, .second-container, .third-container, .fourth-container,.fifth-container {
+ border: 2px solid black; 
+ width: 150px;
+ border-color: bisque;
+ box-shadow: 3px 3px 3px 3px rgba(114, 114, 117, 0.363);
+
+ 
+}
+
+.perst-container img, .second-container img, .third-container img,.fourth-container img, .fifth-container img{
+  width: 100%;
+  object-fit: cover;
+}
+.footer {
+  border: 2px solid black;
   
 }
