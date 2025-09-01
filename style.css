@@ -160,7 +160,7 @@ font-size: 12px;
   flex-direction: row;
   background-color: rgba(243, 238, 238, 0.616);
   gap: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 30px;
 }
 
