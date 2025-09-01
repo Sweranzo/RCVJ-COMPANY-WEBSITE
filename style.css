@@ -179,5 +179,12 @@ font-size: 12px;
 }
 .footer {
   border: 2px solid black;
-  
+
+}
+.company-map {
+display: flex;
+overflow: hidden;
+width: 100%;
+
+
 }
