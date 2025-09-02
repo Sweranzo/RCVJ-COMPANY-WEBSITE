@@ -2,7 +2,8 @@
 
 *{
   margin: 0;
-  padding: 0;  
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 body {
@@ -165,10 +166,11 @@ font-size: 12px;
 }
 
 .perst-container, .second-container, .third-container, .fourth-container,.fifth-container {
- border: 2px solid black; 
  width: 150px;
  border-color: bisque;
  box-shadow: 3px 3px 3px 3px rgba(114, 114, 117, 0.363);
+ overflow: hidden;
+ border-radius: 15px;
 
  
 }
@@ -212,4 +214,63 @@ object-fit: fill;
   background-color: rgba(243, 238, 238, 0.616);
   padding:40px;
   text-align: center;
+}
+
+
+/*about page*/
+
+.about-first-section {
+  padding: 10%;
+  overflow-x: hidden;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(250, 250, 249);
+}
+.aboutus {
+  font-weight: 900;
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+}
+.about-second-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+ 
+}
+.box{ 
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+  border-color: bisque;
+  overflow: hidden;
+  word-break: break-all;
+  gap: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(59, 59, 187, 0.363);
+  background-color: rgba(150, 145, 145, 0.096);
+  border-radius: 10px;
+  
+}
+
+.box-title{
+  text-align: center;
+  font-size: 13px;
+}
+
+.about-list-para { 
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: rgb(68, 69, 70);
+  font-size: 12px;
+  font-weight: light;
 }
