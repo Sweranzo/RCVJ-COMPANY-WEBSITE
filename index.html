@@ -8,18 +8,25 @@
   <script src="index.js" defer></script>
 </head>
 <body>
-
+  <div class="bg">
+    <img class="bodybackground" src="./images/mainbg.jpg">
+  </div>
   <div id="header">
     <div class="logo">
       <img class="rcvj" src="./images/logo.png" alt="logo" width="120" height="100"/>
     </div>
     <div class="nav">
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <div class="links">
-        <ul>
-          <li><a href="">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="">JOBS</a></li>  
-        </ul>
+        
+          <a href="">Home</a>
+          <a href="about.html">About</a>
+          <a href="">Partners</a>
+        
        </div> 
     </div>
   </div>
@@ -30,15 +37,15 @@
         <div class="first-section">
           <div class="main-tag">
             <h1 class="heading1">Start Working with,
-            <u style="color:rgb(55, 153, 209);">
+           
               <span style ="color:rgba(230, 120, 21, 1);"> RCVJ</span>
               <span style="color:rgba(41, 21, 113, 1);"> INCORPORATED</span>
-            </u>
+            
             </h1>
             <button class="apply">Apply Now </button>
           </div>
-            <div class="working-man">
-              <video class="man-gif" autoplay muted loop><source src="./videos/people.mp4"></video>
+            <div id="working-man">
+              <!-- <video class="man-gif" autoplay muted loop><source src="./videos/people.mp4"></video> -->
             </div>
         </div>
       </section>
@@ -118,5 +125,6 @@
     </div>
     
   <script src="//code.tidio.co/vxennfznpr8yqvlhzvuj6mqy65gxj6j4.js" async></script>
+  <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
 </body>
 </html>
