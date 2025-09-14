@@ -118,16 +118,10 @@ body {
 
 }
 
-
-
 .links a {
   color: white;
   text-decoration: none;
   font-size:15px;
-
-  
-
-  
 }
 
 .links.active {
@@ -141,21 +135,14 @@ body {
   flex-wrap: wrap;
   flex: 1;
   flex-direction: row;
-  justify-content: space-between;
-  
+  justify-content: space-between; 
   padding: 10px;
 
  }
 
  #working-man{
   width: 35%;
-  
  }
-
-
-
-
-
 
 .heading1{
   font-size: 35px;
@@ -166,13 +153,13 @@ body {
 .apply {
   margin-top: 10px;
   width: 100px;
-
   border-radius: 20px;
   height: 35px;
-  background-color:rgba(41, 21, 113, 1);
-  border: none;
+  background-color:transparent;
+  border: 1px solid rgba(255, 255, 255, 0.452);
   color: white;
   font-weight: bold;
+  backdrop-filter: blur(20px);
 }
 /* second section */
 .second-section{
@@ -238,36 +225,50 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/*social media*/
-
-.social-media{
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  gap: 20px;
-  align-items: center;
-  
-  
-}
-
-.social-media img{
-  width: 40px;
-  
-}
 /* third -section */
 .third-section {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  /*background-color: rgba(243, 238, 238, 0.616);*/
-  
+  color: white;
   justify-content: space-around;
   margin-top: 10px;
   margin-left: 10px;
-  margin-right:10px;
+  margin-right:10px;  
+  border-radius: 20px;
+  border: 1px solid white;
+ 
+}
+.third-first-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin-bottom: 10px;
   
+}
+.third-first-section img{
+  height: 200px;
   
-  
+}
+.third-section-para {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px;
+}
+.partners-para{
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+}
+.des-para{
+  font-size: 14px;
+  hyphens: auto;
+  text-align:justify;
 }
 
 
@@ -283,6 +284,26 @@ body {
 .perst-container img, .second-container img, .third-container img,.fourth-container img, .fifth-container img{
   width: 100%;
   object-fit: cover;
+}
+
+/*social media*/
+
+.social-media{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+  color: rgb(245, 245, 245);
+  gap: 15px;
+ 
+  border-radius: 5px;
+}
+
+.social-media img{
+  width: 40px;
+  
 }
 .fourth-section {
   display: flex;
@@ -335,8 +356,10 @@ object-fit: fill;
 /*about page*/
 
 .about-first-section {
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
   overflow-x: hidden;
+  margin-top: 10px;
 }
  .about-container{
     display: flex;
