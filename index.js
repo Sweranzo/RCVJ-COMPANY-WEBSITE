@@ -1,3 +1,19 @@
+
+//loading page// 
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("content");
+
+  loader.style.opacity = "100";   // fade out
+  setTimeout(() => {
+    loader.style.display = "none";
+    content.style.display = "block";
+  }, 2800); // matches transition time
+});
+
+
+
+
 //text-animation//
 const setTextTransition = document.getElementById('changing-text');
 const messages = ['Start your career now with us', 'Fast reliable process', 'Good environments'];
@@ -40,4 +56,21 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: true,
     path: 'JSON/Welcome.json'
   });
+  
+  lottie.loadAnimation({
+    container: document.getElementById('location'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'JSON/Globe.json'
+  });
+
+    lottie.loadAnimation({
+    container: document.getElementById('confused'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'JSON/confused.json'
+  });
 });
+

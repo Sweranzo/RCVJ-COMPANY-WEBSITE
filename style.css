@@ -11,11 +11,47 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Roboto Condensed", sans-serif;
-  padding-left: 10px;
-  padding-right: 10px;
+
 
 }
+/*loading page */
+/* Loader container */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/mainbg.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+ 
+}
 
+/* Logo animation */
+#logo-loader {
+  width: 120px; /* adjust size */
+ /* animation: spin 2s linear infinite, fadeIn 2s ease;*/
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* @keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+ */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/*backgroud */
 .bg img{
   position: fixed;
   z-index: -1;
@@ -76,8 +112,8 @@ body {
   position: absolute;
   top: 100%;
   right: -100%;   
-  height: 100vh;  
-  width: 75px;   
+  height: 130px;  
+  width: 100%;   
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,9 +152,9 @@ body {
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
- 
+  
+  padding: 10px;
+
  }
 
  #working-man{
@@ -157,7 +193,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-end-end-radius: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  
 
 
 }
@@ -214,10 +253,10 @@ body {
 .social-media{
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   gap: 20px;
   align-items: center;
-  margin-bottom: 15px;
+  
   
 }
 
@@ -231,20 +270,25 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   /*background-color: rgba(243, 238, 238, 0.616);*/
-  gap: 20px;
-  justify-content: space-evenly;
-  padding: 30px;
+  
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right:10px;
+  
+  
+  
 }
+
 
 .perst-container, .second-container, .third-container, .fourth-container,.fifth-container {
- width: 150px;
+ width: 49%;
  border-color: bisque;
- box-shadow: 3px 3px 3px 3px rgba(114, 114, 117, 0.363);
  overflow: hidden;
- border-radius: 15px;
-
- 
+ border-radius: 50px;
 }
+
+
 
 .perst-container img, .second-container img, .third-container img,.fourth-container img, .fifth-container img{
   width: 100%;
@@ -256,6 +300,7 @@ body {
   overflow: hidden;
   justify-content: space-between;
   padding: 20px;
+  
 }
 
 .location-info {
@@ -264,13 +309,16 @@ body {
   color: white;
 }
 
+#location {
+ 
+  width: 50%;
+  height: 50%;
+}
+
+
 .map {
 
-display: flex;
-flex-direction: row;
 width: 50%;
-height: 100%;
-
 border-radius: 30px;
 overflow: hidden;
 
@@ -300,21 +348,25 @@ object-fit: fill;
   padding: 10%;
   overflow-x: hidden;
 }
-
-.about-container{
+ .about-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
-    background-color: white;
-    border: 2px solid rgba(41, 21, 113, 0.37);
+    background-color:transparent;
+    border: 2px solid #95949c86;
     padding: 20px;
-    box-shadow: 0px 10px 0px 5px rgba(41, 21, 113, 0.959);
+    box-shadow: 0px 10px 0px 5px rgba(193, 193, 204, 0.055);
+}
+#confused {
+  border-radius: 60px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
 }
 .aboutus {
   font-weight: 900;
   font-size: 50px;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 .about-second-section {
   display: flex;
@@ -335,9 +387,11 @@ object-fit: fill;
   overflow: hidden;
   word-break: break-all;
   gap: 5px;
-  background-color: white;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(139, 135, 135, 0.144);
+  color: white;
   
 }
 
@@ -352,7 +406,7 @@ object-fit: fill;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  color: rgba(68, 69, 70, 0.897);
+  
   font-size: 8px;
   font-weight: light;
   padding:10px;
@@ -363,3 +417,6 @@ object-fit: fill;
 .box ul{
   list-style-type: none;
 }
+
+
+/* trial */ 

@@ -5,20 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About us</title>
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </head>
 <body>
-    <div id="header">
+  <div id="loader">
+    <img src="/images/logo.png" id="logo-loader">
+  </div>
+  <div id="content" style="display:none;">
+  <div class="bg">
+    <img class="bodybackground" src="./images/mainbg.jpg">
+  </div>
+  <div id="header">
     <div class="logo">
       <img class="rcvj" src="./images/logo.png" alt="logo" width="120" height="100"/>
     </div>
     <div class="nav">
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <div class="links">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="">JOBS</a></li>  
-        </ul>
+        
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="">Partners</a>
+        
        </div> 
     </div>
   </div>
@@ -26,9 +38,9 @@
     <section>
       <div class="about-first-section">
         <div class="about-container">
-          <video muted autoplay loop>
-            <source src="./videos/confused.mp4">
-          </video>
+          <div id="confused">
+
+          </div>
           <h1 class="aboutus">Who is <u style="color:rgba(41, 21, 113, 1);"><span style="color: orange;">RCVJ</span></u>?</h1>
         </div>
       </div>   
@@ -76,8 +88,15 @@
        </div>
       </div>
     </section>
+    <footer>
+        <div class="footer">
+          <h6 class="copyright">Copyright © 2025 RCVJ Inc.</h6>
 
+        </div>
+      </footer>
   </div>
      <script src="//code.tidio.co/vxennfznpr8yqvlhzvuj6mqy65gxj6j4.js" async></script>
+     <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
+    </div>  
 </body>
 </html>
