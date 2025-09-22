@@ -72,5 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
     autoplay: true,
     path: 'JSON/confused.json'
   });
+
+   lottie.loadAnimation({
+    container: document.getElementById('cat'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'JSON/cat.json'
+  });
 });
 

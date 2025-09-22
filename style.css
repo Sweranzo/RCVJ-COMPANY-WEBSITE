@@ -349,7 +349,6 @@ object-fit: fill;
   align-items: center;
   color: rgb(245, 245, 245);
   gap: 5px;
- 
   border-radius: 5px;
 }
 
@@ -366,17 +365,66 @@ object-fit: fill;
   padding-right: 10%;
   overflow-x: hidden;
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  
+
 }
+
  .about-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     border-radius: 20px;
     background-color:transparent;
-    border: 2px solid #95949c86;
+   /*  border: 2px solid #95949c86; */
     padding: 20px;
-    box-shadow: 0px 10px 0px 5px rgba(193, 193, 204, 0.055);
+    perspective: 500px;
+    height: 500px;
+    width: 400px;
+    
 }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* smooth flip */
+  transform-style: preserve-3d; /* keep both sides */
+  
+}
+
+.about-container:hover .flip-card-inner {
+  transform: rotateY(180deg); /* flip on hover */
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  color:rgba(230, 120, 21, 1);
+  
+}
+.flip-card-back li{
+  display: flex;
+  align-items: start;
+  color: White;
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* hides the back when not flipped */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+ /*  border:2px solid rgba(255, 255, 255, 0.507); */
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+ 
+
+}
+
 #confused {
   border-radius: 60px;
   background-color: transparent;
@@ -393,6 +441,7 @@ object-fit: fill;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+ 
 
  
 }
@@ -401,7 +450,7 @@ object-fit: fill;
   flex-direction: column;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 30%;
+  width: 40%;
   height: 200px;
   overflow: hidden;
   word-break: break-all;
@@ -410,7 +459,7 @@ object-fit: fill;
   backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(139, 135, 135, 0.144);
-  color: white;
+  color: rgb(255, 255, 255);
   
 }
 
@@ -425,12 +474,11 @@ object-fit: fill;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  
-  font-size: 8px;
+  font-size: 10px;
   font-weight: light;
   padding:10px;
   text-align: justify;
-  
+  color: rgba(255, 255, 255, 0.781);
 }
 
 .box ul{
