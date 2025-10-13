@@ -227,10 +227,12 @@ body {
 }
 
 /* position Section */
+
 #positions {
   padding: 2rem;
   text-align: center;
   color: white;
+  
 }
 u {
   color:white;
@@ -241,22 +243,32 @@ u {
   font-weight: bold;
 }
 .job-card {
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem auto;
   max-width: 600px;
   text-align: left;
-  
-/*   background-image: url(./images/rcvj\ background.png);
-  background-size: cover;
-  background-position: center; */
-  
+  backdrop-filter: blur(20px);
+}
+
+.apply-btn {
+  margin-top: 10px;
+  border: none;
+  width: 50%;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba(230, 120, 21, 1);
+  color: white;
 }
 #jobContainer {
   padding: 20px;
   height: 400px;
   overflow-y: auto;
+  border-left: 3px solid rgba(41, 21, 113, 1);
+  border-right: 3px solid rgba(230, 120, 21, 1);
 }
 
 /* third -section */
@@ -334,6 +346,12 @@ u {
   padding: 20px;
 }
 
+.completeAddress {
+
+  display: none;
+  
+}
+
 .location-info {
   text-align: center;
   margin-top: 15px;
@@ -346,11 +364,16 @@ u {
   height: 50%;
 }
 
+.livemap {
+ color: white;
+ font-size: 15px;
+ text-align: center;
+}
 
 .map {
 
 width: 50%;
-border-radius: 30px;
+border-radius: none;
 overflow: hidden;
 
 
@@ -476,6 +499,7 @@ object-fit: fill;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 20px;
  
 
  
@@ -524,41 +548,57 @@ object-fit: fill;
 /* login page */
 
 #login-container {
-
-  height: 100vh;
-  padding: 10px;
   
- 
+  display: flex;
+  flex-direction: column;
+ /*  align-items: center; */
+  overflow: hidden;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.loginAdmin {
+color: white;
+font-weight: bold;
+}
+
+.register u{
+  font-weight: bold;
+  color: rgb(8, 42, 61);
+
+}
+.signUp {
+  color: white;
+  font-weight: lighter;
 }
 
 .formContainer {
-  padding: 100px;
   display: flex;
-  /* border: 1px solid white; */
-  justify-content: center;
+  flex-direction: column;
   margin-top: 10px;
-  overflow: hidden;
-  padding: 10px;
-  box-shadow: 0px 5px 20px 0px rgba(10, 8, 8, 0.596);
   border-top: none;
   border-radius: 10px;
+  align-items: center;
+
   
- 
 }
 
 #loginForm { 
   display: flex;
-  
   flex-direction: column;
   gap: 10px;
   align-items: center;
+/*   padding: 100px; */
   padding: 100px;
   border-radius: 20px;
-  
+  margin-left: 10px;
+  margin-right: 10px;
+  backdrop-filter: blur(20px);
+ 
 }
 
 #username, #password {
-
   border-radius: 20px;
   height: 50px;
   width: 300px;
@@ -586,12 +626,32 @@ input::placeholder {
 
 #username:focus, #password:focus{
   color: rgb(253, 253, 253);
-  border: 1px solid rgba(19, 18, 18, 0.26);
+  border: 1px solid rgb(240, 236, 236);
   outline: none;
   position: relative;
-  background-color: rgba(225, 225, 233, 0.24);
-  
+  background-color: rgba(7, 7, 7, 0.24);
 }
+
+.joinUs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.girl{
+  height: 170px;
+  width: 250px;
+}
+
+.joinPara {
+  text-align: center;
+  display: flex;
+  align-items: center;
+ 
+  color: white;
+  justify-content: center;
+}
+
 
 /*animation*/
 
@@ -609,6 +669,7 @@ input::placeholder {
 /*media Queries  desktop*/
 
 @media (min-width: 768px) {
+
   /* loader */
   #loader {
   position: fixed;
@@ -629,6 +690,12 @@ input::placeholder {
 #logo-loader {
   width: 200px;
   animation: pulse 1.5s infinite ease-in-out;
+ 
+}
+
+#loader {
+  background-image: url(./images/mainbg.jpg);
+ background-size: cover;
 }
 
 @keyframes pulse {
@@ -772,6 +839,7 @@ input::placeholder {
   margin: 0px;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
+  
 }
 
 .background-video {
@@ -782,7 +850,6 @@ input::placeholder {
   top: 0;
   left: 0;
   z-index: 0;
- 
    
 }
 
@@ -824,6 +891,7 @@ input::placeholder {
 }
 
 /* position Section */
+
 #positions {
   padding: 0;
   text-align: center;
@@ -832,10 +900,6 @@ input::placeholder {
 
   background-size:cover;
 /*   border-top-left-radius: 100%; */
-
-  
-
-  
 } 
 
 .positionPara {
@@ -856,14 +920,21 @@ input::placeholder {
   min-height: 150px;
   text-align: left;
   background-color: transparent;
- backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
   border-radius: 20px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+
+  
  
 }
 
 .job-card:hover {
-  background-color: rgba(255, 68, 0, 0.548);
+  background-color: rgba(41, 21, 113, 0.521);
   border: 2px solid white;
 }
 
@@ -1007,7 +1078,7 @@ input::placeholder {
 
 
 .map {
-
+backdrop-filter: blur(100px);
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -1015,19 +1086,21 @@ align-items: center;
 text-align: center;
 width: 70%;
 height: 100%;
-border-radius: none;
+border-radius: 20px;
 overflow: visible;
+}
 
-
-
-
-
+.livemap{
+  color: white;
+  margin-bottom: 20px;
+  display: visible;
+  font-size: 22px;
 }
 .company-map {
 width: 100%;
 height: 70%;
 
-border-radius: 20px;
+border-radius: none;
 
 }
 
@@ -1036,7 +1109,7 @@ border-radius: 20px;
   background-color: transparent;
   background-position: center;
   background-size: cover;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(100px);
   padding:40px;
   text-align: center;
   box-shadow: 1px 2px 10px rgba(0,0,0,0.5);
@@ -1062,5 +1135,145 @@ border-radius: 20px;
   width: 40px;
   
 }
+
+/*about page*/
+
+.about-first-section {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  overflow: visible;
+ 
+  
+}
+
+ .about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    background-color:transparent;
+   /*  border: 2px solid #95949c86; */
+    padding: 0;
+    perspective: 500px;
+    height: 500px;
+    width: 600px;
+  
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* smooth flip */
+  transform-style: preserve-3d; /* keep both sides */
+  
+  
+}
+
+.about-container:hover .flip-card-inner {
+  transform: rotateY(180deg); /* flip on hover */
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  color:rgba(230, 120, 21, 1);
+  
+}
+.flip-card-back li{
+  display: flex;
+  align-items: center;
+  color: White;
+  
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* hides the back when not flipped */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+ /*  border:2px solid rgba(255, 255, 255, 0.507); */
+  border-radius: 20px;
+  backdrop-filter: blur(100px);
+ 
+}
+
+#confused {
+  border-radius: 60px;
+  background-color: transparent;
+  backdrop-filter: blur(100px);
+  height: 120%;
+  width: 100%;
+}
+.aboutus {
+  font-weight: 900;
+  font-size: 50px;
+  color: white;
+}
+
+.about-second-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.box{ 
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 19%;
+  height: 300px;
+  overflow: hidden;
+  word-break: break-all;
+  gap: 5px;
+  background-color: transparent;
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  border: 1px solid rgba(139, 135, 135, 0.144);
+  color: rgb(255, 255, 255);
+  
+}
+
+.box:hover {
+  background-color:rgba(41, 21, 113, 0.548);
+}
+.box-title{
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(185, 189, 194, 0.11);
+  padding: 10px;
+}
+
+.about-list-para { 
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+  font-weight: light;
+  padding:10px;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.781);
+}
+
+.box ul{
+  list-style-type: none;
+}
+
+/*login form*/
+ .formContainer {
+  margin-top: 100px;
+  backdrop-filter: blur(100px);
+ }
 }
 

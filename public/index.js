@@ -110,18 +110,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      container.innerHTML = jobs
-        .map(
-          (job) => `
-          <div class="job-card">
-            <h3>${job.title}</h3>
-            <p>${job.description}</p>
-            <p><strong>Location:</strong> ${job.location}</p>
-            <small>Posted on: ${new Date(job.date_posted).toLocaleDateString()}</small>
-          </div>
-        `
-        )
-        .join("");
+    container.innerHTML = jobs
+  .map(job => `
+    <div class="job-card">
+      <h3>${job.title}</h3>
+      <p>${job.description}</p>
+      <p><strong>Location:</strong> ${job.location}</p>
+      <small>Posted on: ${new Date(job.date_posted).toLocaleDateString()}</small>
+      <button class="apply-btn" data-id="${job.id}">Apply Now</button>
+    </div>
+  `)
+  .join("");
+
+  document.querySelectorAll(".apply-btn").forEach(button => {
+  button.addEventListener("click", (e) => {
+    const jobId = e.target.getAttribute("data-id");
+    window.location.href = `apply.html?jobId=${jobId}`;
+  });
+});
+
     } catch (err) {
       console.error("Error loading jobs:", err);
     }
@@ -149,3 +156,27 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 });
+
+// apply js//
+
+ document.querySelector("#applicationForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const urlParams = new URLSearchParams(window.location.search);
+      const jobId = urlParams.get("jobId");
+
+      const data = {
+        job_id: jobId,
+        name: document.querySelector("#name").value,
+        email: document.querySelector("#email").value,
+        message: document.querySelector("#message").value
+      };
+
+      const res = await fetch("http://localhost:3000/apply-job", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      alert(result.message);
+    });
