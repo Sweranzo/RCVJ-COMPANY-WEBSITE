@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Listings | RCVJ Company</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Available Job Positions</h1>
+
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search job title...">
+    <select id="filter-location">
+      <option value="">All Locations</option>
+    </select>
+  </div>
+
+  <div id="job-container"></div>
+  <p id="no-jobs" class="no-jobs" style="display: none;">No jobs found.</p>
+
+  <script>
+    const container = document.getElementById("job-container");
+    const searchInput = document.getElementById("search");
+    const filterLocation = document.getElementById("filter-location");
+    const noJobsMsg = document.getElementById("no-jobs");
+
+    let allJobs = [];
+
+    async function loadJobs() {
+      try {
+        const res = await fetch("http://localhost:3000/public-jobs");
+        allJobs = await res.json();
+
+        const uniqueLocations = [...new Set(allJobs.map(job => job.location))];
+        filterLocation.innerHTML = '<option value="">All Locations</option>' +
+          uniqueLocations.map(loc => `<option value="${loc}">${loc}</option>`).join('');
+
+        renderJobs(allJobs);
+      } catch (err) {
+        console.error("Error loading jobs:", err);
+      }
+    }
+
+    function renderJobs(list) {
+      if (list.length === 0) {
+        container.innerHTML = "";
+        noJobsMsg.style.display = "block";
+        return;
+      }
+
+      noJobsMsg.style.display = "none";
+      container.innerHTML = list.map(job => `
+        <div class="job-card">
+          <h3>${job.title}</h3>
+          <p>${job.description}</p>
+          <p><strong>Location:</strong> ${job.location}</p>
+          <small>Posted on: ${new Date(job.date_posted).toLocaleDateString()}</small>
+          <button class="apply-btn" data-id="${job.id}">Apply Now</button>
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".apply-btn").forEach(button => {
+        button.addEventListener("click", (e) => {
+          const jobId = e.target.getAttribute("data-id");
+          window.location.href = `apply.html?jobId=${jobId}`;
+        });
+      });
+    }
+
+    function filterJobs() {
+      const term = searchInput.value.toLowerCase();
+      const loc = filterLocation.value;
+
+      const filtered = allJobs.filter(job => {
+        const matchesSearch = job.title.toLowerCase().includes(term);
+        const matchesLoc = loc ? job.location === loc : true;
+        return matchesSearch && matchesLoc;
+      });
+
+      renderJobs(filtered);
+    }
+
+    searchInput.addEventListener("input", filterJobs);
+    filterLocation.addEventListener("change", filterJobs);
+
+    loadJobs();
+  </script>
+</body>
+</html>

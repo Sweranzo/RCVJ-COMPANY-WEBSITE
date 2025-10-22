@@ -30,9 +30,15 @@ async function loadJobs() {
         <p>${job.description}</p>
         <p><strong>Location:</strong> ${job.location}</p>
         <p><small>${new Date(job.date_posted).toLocaleString()}</small></p>
-        <button onclick="editJob(${job.id}, '${job.title}', '${job.description}', '${job.location}')">Edit</button>
-        <button onclick="deleteJob(${job.id})">Delete</button>
-      </div>
+      <button class="edit-btn"
+        data-id="${job.id}"
+        data-title="${encodeURIComponent(job.title)}"
+        data-description="${encodeURIComponent(job.description)}"
+        data-location="${encodeURIComponent(job.location)}">
+        Edit
+      </button>
+      <button class="delete-btn" data-id="${job.id}">Delete</button>
+    </div>
     `)
     .join("");
 }
@@ -71,3 +77,53 @@ function editJob(id, title, description, location) {
 
 // Auto-load jobs when page opens
 loadJobs();
+// handle edit/delete clicks via event delegation
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("edit-btn")) {
+    const id = e.target.dataset.id;
+    const title = decodeURIComponent(e.target.dataset.title);
+    const description = decodeURIComponent(e.target.dataset.description);
+    const location = decodeURIComponent(e.target.dataset.location);
+    editJob(id, title, description, location);
+  }
+
+  if (e.target.classList.contains("delete-btn")) {
+    const id = e.target.dataset.id;
+    deleteJob(id);
+  }
+});
+
+
+//candidates//
+async function loadCandidates() {
+  try {
+    const res = await fetch("http://localhost:3000/candidates");
+    const candidates = await res.json();
+
+    const container = document.querySelector("#candidateContainer");
+    if (!container) return;
+
+    if (candidates.length === 0) {
+      container.innerHTML = "<p>No candidates yet.</p>";
+      return;
+    }
+
+    container.innerHTML = candidates
+      .map(
+        (c) => `
+        <div class="candidate-card">
+          <h4>${c.name}</h4>
+          <p><strong>Email:</strong> ${c.email}</p>
+          <p><strong>Position:</strong> ${c.position || "Unknown"}</p>
+          <p><strong>Message:</strong> ${c.message}</p>
+          <small>Applied on: ${new Date(c.date_applied).toLocaleDateString()}</small>
+        </div>
+      `
+      )
+      .join("");
+  } catch (err) {
+    console.error("Error loading candidates:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadCandidates);

@@ -86,6 +86,8 @@ app.delete("/delete-job/:id", (req, res) => {
 
 // --- APPLY FOR JOB ---
 app.post("/apply-job", (req, res) => {
+  console.log("🚀 /apply-job endpoint was triggered!");
+  console.log("📩 Received application data:", req.body);
   const { job_id, name, email, message } = req.body;
   const sql =
     "INSERT INTO job_applications (job_id, name, email, message) VALUES (?, ?, ?, ?)";
@@ -98,4 +100,36 @@ app.post("/apply-job", (req, res) => {
 // --- START SERVER ---
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
+//candidates//
+app.get("/candidates", async (req, res) => {
+  try {
+    console.log("🧠 Fetching candidates...");
+    const [rows] = await db.promise().query(`
+      SELECT 
+        ja.id,
+        ja.name,
+        ja.email,
+        ja.message,
+        ja.date_applied,
+        jl.title AS position
+      FROM job_applications ja
+      LEFT JOIN job_listings jl ON ja.job_id = jl.id
+      ORDER BY ja.date_applied DESC
+    `);
+    console.log("✅ Candidates fetched:", rows);
+    res.json(rows);
+  } catch (err) {
+    console.error("❌ Error fetching candidates:", err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+app.get("/tables", (req, res) => {
+  db.query("SHOW TABLES", (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.json(results);
+  });
 });

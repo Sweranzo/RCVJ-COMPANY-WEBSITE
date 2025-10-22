@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // apply js//
-
+  console.log("✅ Apply form script is loaded and running...");
  document.querySelector("#applicationForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const urlParams = new URLSearchParams(window.location.search);
@@ -179,4 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const result = await res.json();
       alert(result.message);
+
+      if (res.ok) {
+      window.location.href = "index.html"; // or wherever your homepage is
+      }
+
     });
