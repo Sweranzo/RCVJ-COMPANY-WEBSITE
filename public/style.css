@@ -556,6 +556,10 @@ object-fit: fill;
   margin-left: 10px;
   margin-right: 10px;
   align-items: center;
+  border-radius: 20px;
+  
+  height: 100vh;
+  
 }
 
 .loginAdmin {
@@ -580,8 +584,7 @@ font-weight: bold;
   border-top: none;
   border-radius: 10px;
   align-items: center;
-
-  
+  border: 2px solid rgba(255, 255, 255, 0.418);
 }
 
 #loginForm { 
@@ -632,25 +635,6 @@ input::placeholder {
   background-color: rgba(7, 7, 7, 0.24);
 }
 
-.joinUs {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.girl{
-  height: 170px;
-  width: 250px;
-}
-
-.joinPara {
-  text-align: center;
-  display: flex;
-  align-items: center;
- 
-  color: white;
-  justify-content: center;
-}
 
 
 /*animation*/

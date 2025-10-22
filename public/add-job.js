@@ -6,7 +6,7 @@ document.querySelector("#jobForm").addEventListener("submit", async (e) => {
     description: document.querySelector("#description").value,
     location: document.querySelector("#location").value,
   };
-
+  
   const res = await fetch("http://localhost:3000/add-job", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
